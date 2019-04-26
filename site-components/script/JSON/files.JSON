@@ -1,0 +1,5 @@
+{
+  "home": "site-components/content/home.html",
+  "members": "site-components/content/members.html",
+  "impact": "site-components/content/impact.html"
+}

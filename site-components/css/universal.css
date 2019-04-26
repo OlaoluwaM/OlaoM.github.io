@@ -1,0 +1,156 @@
+:root {
+  --font-t: 'Poiret One';
+  --font-b: 'Open Sans';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.nav-container {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.menu {
+  display: none;
+}
+
+.tab {
+  position: relative;
+  width: 70px;
+  min-width: 70px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: .7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.open {
+  flex-grow: 1;
+}
+
+.tab>span {
+  z-index: -33;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  text-transform: capitalize;
+  color: #000;
+  text-decoration: none;
+}
+
+main {
+  display: block;
+}
+
+main>div {
+  position: relative;
+  width: calc(100% - 140px);
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+#view-home,
+#view-members,
+#view-impact {
+  position: relative;
+}
+
+.hidden,
+.nav-text_hide {
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+
+.visible,
+.nav-text_visible {
+  transition: 1s .5s ease-in-out;
+  opacity: 1;
+}
+
+.hidden-bar,
+.visible-bar {
+  transform-origin: top;
+}
+
+.hidden-bar {
+  transform: scaleY(0);
+}
+
+.visible-bar {
+  transform: scaleY(1);
+}
+
+.content-holder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content-holder>.title {
+  width: 100%;
+  height: 100vh;
+}
+
+.content-holder>.title>h1 {
+  margin: 0;
+  width: 0%;
+  height: 12%;
+  font-family: var(--font-t);
+  font-size: 1rem;
+  letter-spacing: .6rem;
+  text-align: left;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  color: rgba(0, 0, 0, .4)
+}
+
+.content-holder>.title>div {
+  height: 88%;
+}
+
+.content-holder>.title>div>h2 {
+  padding-top: 3%;
+  margin-top: 90px;
+  padding-left: 12%;
+  font-size: 10rem;
+  width: 40%;
+  white-space: wrap;
+  line-height: 13rem;
+  font-family: var(--font-t);
+  float: left;
+  text-transform: capitalize;
+  font-weight: 100;
+}
+
+.content-holder>.title>div>img {
+  margin: 0 0 0 300px;
+  max-width: 30%;
+  height: 60%;
+}
