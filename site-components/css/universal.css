@@ -126,7 +126,7 @@ p {
 }
 
 .content-holder>.title>h1 {
-  padding-top: 35px;
+  padding-top: 10px;
   padding-left: 30px;
   width: 5%;
   height: 10%;
@@ -138,35 +138,36 @@ p {
   text-transform: uppercase;
   transform: rotate(90deg);
   color: rgba(0, 0, 0, .3);
-  position: fixed;
+  position: absolute;
   display: block;
   z-index: -2;
 }
 
 .content-holder>.title>div {
   height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 .content-holder>.title>div>h2 {
-  padding-top: 3%;
-  margin-top: 80px;
-  padding-left: 12%;
-  font-size: 7.2rem;
+  flex-basis: 40%;
+  padding-top: 6%;
+  padding-left: 11%;
+  font-size: 7rem;
   width: 45%;
   line-height: 10rem;
-  white-space: wrap;
   font-family: var(--font-t);
-  float: left;
   text-transform: capitalize;
   font-weight: 100;
 }
 
 .content-holder>.title>div>img {
-  margin: 0 0 0 300px;
-  max-width: 30%;
-  height: 60%;
-  top: 0;
-  position: fixed;
+  flex-basis: 60%;
+  margin-top: 50px;
+  margin-left: 40px;
+  max-width: 50%;
+  height: 50%;
+  position: relative;
 }
 
 ::-webkit-scrollbar {

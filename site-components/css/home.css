@@ -23,6 +23,8 @@
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 #view-home>.content-holder>.content>.text {
@@ -50,9 +52,12 @@
   overflow: hidden;
 }
 
+#view-home>.content-holder>.title>div>h2 {
+  padding-left: 6%;
+}
+
 .declare {
   width: 100%;
-  /* height: 90%; */
 }
 
 .declare>h3 {
