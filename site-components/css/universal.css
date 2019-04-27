@@ -154,3 +154,7 @@ p {
   max-width: 30%;
   height: 60%;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
