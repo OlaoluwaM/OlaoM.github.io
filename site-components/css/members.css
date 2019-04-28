@@ -56,6 +56,7 @@
   transform-origin: top left;
   width: 0;
   height: 0;
+  display: flex;
   animation: enlarge 1s ease forwards;
   transition: .4s;
 }
@@ -78,6 +79,7 @@
   justify-content: center;
   align-items: flex-end;
   padding: 0 70px;
+  left: 0;
   animation: slide-in 1s .8s ease forwards;
   flex-direction: column;
   transition: .5s ease;
@@ -150,6 +152,39 @@
 @keyframes slide-in {
   to {
     opacity: 1;
-    margin-left: 50%;
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .member-holder>.pic>img {
+    object-position: 70% 70%;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .meet-members {
+    flex-direction: column;
+  }
+
+  .member-holder>.pic>img {
+    object-position: 40%;
+  }
+
+  .member-holder>.pic>img:nth-of-type(2) {
+    object-position: 400%;
+  }
+
+  /* .member-holder>.pic>img:last-of-type {
+    object-position: 300%;
+  } */
+  .foreground>.article {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .foreground {
+    flex-direction: column;
   }
 }
