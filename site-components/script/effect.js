@@ -21,23 +21,23 @@ class Effect {
 
     this.elementList('.tab').forEach((element, ind, arr) => {
       let delay = ind + 3;
-      console.log(this.inView(this.element('.nav-container')));
       if (this.inView(this.element('.nav-container'))) {
         element.classList.add('visible-bar');
         element.classList.remove('hidden-bar');
-        element.style = `transition-delay: ${(Number(delay) / 20) + 1}s`
+        element.style = `transition-delay: ${(Number(delay) / 20) + 1}s`;
+        if (!(element.classList.contains('open'))) {
+          setTimeout(() => {
+            element.firstElementChild.classList.remove('nav-text_hide');
+            element.firstElementChild.classList.add('nav-text_visible')
+          }, 1000);
+        }
       }
+
       setTimeout(() => {
         element.style = '';
-        this.elementList('.nav-text_hide').forEach(text => {
-          if (this.inView(text) && text.nodeType === 1) {
-            console.log('here');
-            text.classList.add('nav-text_visible');
-            text.classList.remove('nav-text_hide');
-          }
-        })
       }, 1500);
     })
+
     this.element('.nav-container').addEventListener('click', event => {
       if (event.target.matches('.tab')) {
         this.changeSection();
@@ -226,12 +226,10 @@ class Effect {
     }, interval);
   }
   reveal() {
-    event.target.nextElementSibling.style = 'opacity: 0'
     event.target.parentElement.classList.add('foreground')
     this.elementList('.member-holder').forEach(elem => {
       if (elem.nodeType === 1 && !(elem.classList.contains('foreground'))) {
         elem.classList.add('behind');
-        elem.firstElementChild.nextElementSibling.style = 'opacity: 0'
       }
     })
   }
@@ -252,16 +250,6 @@ class Effect {
     this.getContent(place);
     if (place === 'members') {
       this.normal()
-      setTimeout(() => {
-        console.log(this.element('.meet-members'));
-        this.element('.meet-members').addEventListener('click', event => {
-          if (event.target.matches('.pic')) {
-            console.log('clicked');
-            this.reveal()
-          }
-        })
-        console.log(222);
-      }, 200);
     }
   }
 }
