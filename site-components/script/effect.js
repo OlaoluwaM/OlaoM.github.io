@@ -32,7 +32,6 @@ class Effect {
           }, 1000);
         }
       }
-
       setTimeout(() => {
         element.style = '';
       }, 1500);
@@ -226,7 +225,7 @@ class Effect {
     }, interval);
   }
   reveal() {
-    event.target.parentElement.classList.add('foreground')
+    event.target.parentElement.parentElement.classList.add('foreground')
     this.elementList('.member-holder').forEach(elem => {
       if (elem.nodeType === 1 && !(elem.classList.contains('foreground'))) {
         elem.classList.add('behind');

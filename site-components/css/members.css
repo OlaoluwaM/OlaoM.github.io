@@ -29,6 +29,7 @@
 .member-holder>.article {
   position: absolute;
   opacity: 0;
+  z-index: -33;
 }
 
 .member-holder>.pic>img {
@@ -48,10 +49,7 @@
   filter: brightness(1);
 }
 
-.article {
-  position: absolute;
-  z-index: -33;
-}
+
 
 .foreground {
   position: relative;
@@ -66,7 +64,10 @@
   flex-basis: 50%;
   width: 50%;
   height: 100%;
-  /* transition: .5s ease; */
+}
+
+.foreground>.pic>img {
+  filter: brightness(1);
 }
 
 .foreground .article {
@@ -75,20 +76,19 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 0 70px;
   animation: slide-in 1s .8s ease forwards;
   flex-direction: column;
   transition: .5s ease;
-  font-weight: 300;
   font-family: var(--font-b);
-  font-size: 1.3rem;
+  font-size: .9rem;
+  text-align: right;
 }
 
 .foreground>.article>h1 {
   font-family: var(--font-t);
-  font-size: 4rem;
-  text-align: left;
+  font-size: 2rem;
   font-weight: 100;
   width: 100%;
   margin-top: 30px;
@@ -96,16 +96,18 @@
 
 .foreground>.article>p {
   margin-bottom: 40px;
+  font-size: .9rem;
+  font-family: var(--font-b);
+  line-height: 2.5rem;
 }
 
 .foreground>.article>.nav-back {
   font-family: var(--font-b);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-align: left;
   font-weight: 100;
-  width: 40%;
+  padding: 3%;
   white-space: nowrap;
-  height: 10%;
   background: none;
   outline: none;
   border: none;
@@ -113,10 +115,14 @@
   filter: brightness(.8);
   color: #fff;
   text-align: center;
-  margin-bottom: 30px;
   position: relative;
-  margin-right: 450px;
   cursor: pointer;
+  transition: .4s ease;
+}
+
+.foreground>.article>.nav-back:hover {
+  color: rgba(131, 52, 113, 1);
+  background-color: #f1f1f1;
 }
 
 .behind {
