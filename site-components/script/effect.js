@@ -2,21 +2,18 @@ class Effect {
   constructor() {
     window.onload = () => {
       this.getContent("home")
+      this.showContent()
       if (window.matchMedia("(max-width: 1200px)") && document.contains(this.element('.menu')) && this.element('.menu').childElementCount <= 0) {
         let menu = this.element('.menu');
         fetch('site-components/svg/menu.svg').then(res => res.text()).then(svg => {
           menu.insertAdjacentHTML('afterbegin', svg);
         })
       }
+
     }
 
     window.onscroll = () => {
-      this.elementList('.hidden').forEach(elem => {
-        if (this.inView(elem)) {
-          elem.classList.remove('hidden');
-          elem.classList.add('visible');
-        }
-      })
+      this.showContent()
     }
 
     this.elementList('.tab').forEach((element, ind, arr) => {
@@ -250,6 +247,14 @@ class Effect {
     if (place === 'members') {
       this.normal()
     }
+  }
+  showContent() {
+    this.elementList('.hidden').forEach(elem => {
+      if (this.inView(elem)) {
+        elem.classList.remove('hidden');
+        elem.classList.add('visible');
+      }
+    })
   }
 }
 let parallax = new Effect();

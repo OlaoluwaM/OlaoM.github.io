@@ -89,14 +89,16 @@ p {
 
 .hidden,
 .nav-text_hide {
-  transition: 1s ease-in-out;
+  transform: translateY(100px);
+  transition: .6s ease-in-out;
   opacity: 0;
 }
 
 .visible,
 .nav-text_visible {
-  transition: 1s .5s ease-in-out;
+  transition: .6s .5s ease-in-out;
   opacity: 1;
+  transform: translateY(0px)
 }
 
 .hidden-bar,
