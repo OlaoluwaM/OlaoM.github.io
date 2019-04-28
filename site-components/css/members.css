@@ -183,8 +183,28 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .foreground {
     flex-direction: column;
+  }
+
+  .foreground>.pic {
+    position: relative;
+    width: 100%;
+  }
+
+  .foreground>.pic>img {
+    height: 100%;
+    object-fit: 100%;
+  }
+
+  .foreground>.article {
+    position: relative;
+    width: 100%;
+    animation: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    text-align: center;
   }
 }
