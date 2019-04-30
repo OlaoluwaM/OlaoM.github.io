@@ -16,7 +16,7 @@ class Effect {
       this.showContent()
     }
 
-    this.elementList('.tab').forEach((element, ind, arr) => {
+    this.elementList('.tab').forEach((element, ind, _arr) => {
       let delay = ind + 3;
       if (this.inView(this.element('.nav-container'))) {
         element.classList.add('visible-bar');
@@ -45,7 +45,7 @@ class Effect {
     this.element('.menu').addEventListener('click', () => {
       this.menuJS()
     })
-    // this.slideshow(6000)
+    this.slideshow(4000)
   }
   element(elem) {
     return document.querySelector(elem);
@@ -162,7 +162,7 @@ class Effect {
     this.element('.nav-container').classList.add('mobile');
     this.element('.menu').style = "transform: translateY(-400px) scaleX(0)"
     this.opened().classList.remove('open');
-    this.elementList('.tab').forEach((elem, ind, arr) => {
+    this.elementList('.tab').forEach((elem, ind, _arr) => {
       if (elem.nodeType === 1) {
         elem.classList.remove('hidden-bar');
         setTimeout(() => {
@@ -187,31 +187,28 @@ class Effect {
     setInterval(() => {
       let pictureHolder = this.element('picture');
       if (!(pictureHolder.parentElement.classList.contains('hidden'))) {
-        pictureHolder.childNodes.forEach((img, ind, arr) => {
+        pictureHolder.childNodes.forEach((img, _ind, arr) => {
           if (img.nodeType === 1) {
             imgArray = [...arr]
             let newImgArray = imgArray.filter(elem => elem.nodeType === 1);
             let numb = random(newImgArray.length);
+            let newImg = newImgArray[numb]
             if (img.matches('.active')) {
-              if (newImgArray[numb] !== img) {
+              if (newImg !== img) {
                 console.log('pass');
-                img.classList.add('dormant');
+                newImg.classList.remove('dormant');
+                newImg.classList.add('active');
                 img.classList.remove('active');
-                newImgArray[numb].classList.add('active');
-                newImgArray[numb].classList.remove('dormant');
+                img.classList.add('dormant');
               } else {
-                let duplicate = newImgArray.map((elem, ind, arr) => {
+                let duplicate = newImgArray.map((elem, _ind, arr) => {
                   let dd = arr.find(elem === img)
                   return dd
                 })
                 console.log(duplicate);
-
                 // this.slideshow(0);
-                console.log('duplicate');
               }
-              console.log('Done!');
-            }
-            if (!(img.classList.contains('active'))) {
+            } else {
               img.classList.add('dormant')
             }
           }
