@@ -1,10 +1,13 @@
 [{
-    "title": "Ayooluwa Ogungbenro"
+    "title": "Ayooluwa Ogungbenro",
+    "article": "https://olaoluwam.github.io/OlaoM.github.io/site-components/script/articles/Ayo.txt"
   },
   {
-    "title": "Tise Odojukan"
+    "title": "Tise Odojukan",
+    "article": "https://olaoluwam.github.io/OlaoM.github.io/site-components/script/articles/Tis.txt"
   },
   {
-    "title": "Dunmomi Osunkunle"
+    "title": "Dunmomi Osunkunle",
+    "article": "https://olaoluwam.github.io/OlaoM.github.io/site-components/script/articles/Dun.txt"
   }
 ]
