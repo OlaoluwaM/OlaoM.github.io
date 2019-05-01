@@ -41,13 +41,14 @@ class Effect {
         this.changeSection();
       }
     })
-    setInterval(() => {
-      document.body.style.setProperty('--delay', `${((Math.random() * 4) + 1)}s`)
-    }, 4000);
     this.element('.menu').addEventListener('click', () => {
       this.menuJS()
     })
-    this.slideshow(4000)
+    setTimeout(() => {
+      if (this.element('main>div').getAttribute('data-page', 'home')) {
+        this.slideshow(4000)
+      }
+    }, 700);
   }
   element(elem) {
     return document.querySelector(elem);
@@ -202,13 +203,6 @@ class Effect {
                 newImg.classList.add('active');
                 img.classList.remove('active');
                 img.classList.add('dormant');
-              } else {
-                let duplicate = newImgArray.map((elem, _ind, arr) => {
-                  let dd = arr.find(elem === img)
-                  return dd
-                })
-                console.log(duplicate);
-                // this.slideshow(0);
               }
             } else {
               img.classList.add('dormant')

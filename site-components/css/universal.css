@@ -1,7 +1,7 @@
 :root {
   --font-t: 'Poiret One';
   --font-b: 'Open Sans';
-  --delay: 0;
+  /* --delay: 0; */
 }
 
 * {
@@ -94,7 +94,7 @@ p {
 }
 
 .hidden {
-  transform: translateY(100px);
+  transform: translateY(50px);
   transition: .6s ease-in-out;
   opacity: 0;
 }
@@ -105,7 +105,7 @@ p {
 }
 
 .visible {
-  transition: .6s var(--delay) ease-in-out;
+  transition: .6s .5s ease-in-out;
   opacity: 1;
   transform: translateY(0px)
 }
