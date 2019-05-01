@@ -41,7 +41,9 @@ class Effect {
         this.changeSection();
       }
     })
-
+    setInterval(() => {
+      document.body.style.setProperty('--delay', `${((Math.random() * 4) + 1)}s`)
+    }, 4000);
     this.element('.menu').addEventListener('click', () => {
       this.menuJS()
     })

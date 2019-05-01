@@ -1,6 +1,7 @@
 :root {
   --font-t: 'Poiret One';
   --font-b: 'Open Sans';
+  --delay: 0;
 }
 
 * {
@@ -87,16 +88,24 @@ p {
   position: relative;
 }
 
-.hidden,
 .nav-text_hide {
+  transition: .6s ease-in-out;
+  opacity: 0;
+}
+
+.hidden {
   transform: translateY(100px);
   transition: .6s ease-in-out;
   opacity: 0;
 }
 
-.visible,
 .nav-text_visible {
-  transition: .6s .5s ease-in-out;
+  transition: .6s .8s ease-in-out;
+  opacity: 1;
+}
+
+.visible {
+  transition: .6s var(--delay) ease-in-out;
   opacity: 1;
   transform: translateY(0px)
 }
