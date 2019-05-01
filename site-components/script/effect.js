@@ -249,5 +249,17 @@ class Effect {
       }
     })
   }
+  fetchArticle(tag) {
+    fetch('site-components/script/JSON/content.JSON').then(res => res.json().then(obj => {
+      console.log(obj);
+    }))
+  }
+  destructure({
+    article
+  }) {
+    let p = popup;
+    fetch(article).then(res => res.text().then(txt => p.element('.info').innerHTML = txt))
+    console.log('Done!');
+  }
 }
 let parallax = new Effect();
