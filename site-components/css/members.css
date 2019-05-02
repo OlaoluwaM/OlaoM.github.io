@@ -41,7 +41,7 @@
   display: block;
   object-fit: cover;
   object-position: 100% 100%;
-  filter: brightness(.3);
+  filter: brightness(.3) blur(5px);
   transition: .5s ease;
 }
 
