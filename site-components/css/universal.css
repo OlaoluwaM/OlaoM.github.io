@@ -93,7 +93,7 @@ p {
 }
 
 .hidden {
-  transform: translateY(50px);
+  transform: translateY(100px);
   transition: .6s ease-in-out;
   opacity: 0;
 }

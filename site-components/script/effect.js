@@ -216,6 +216,7 @@ class Effect {
   }
   reveal() {
     event.target.parentElement.parentElement.classList.add('foreground')
+    this.fetchArticle(event.target.parentElement.parentElement.nextElementSibling.firstElementChild.nextElementSibling.innerText.slice(0, 2))
     this.elementList('.member-holder').forEach(elem => {
       if (elem.nodeType === 1 && !(elem.classList.contains('foreground'))) {
         elem.classList.add('behind');
@@ -249,16 +250,17 @@ class Effect {
       }
     })
   }
-  fetchArticle(tag) {
+  fetchArticle(criteria) {
     fetch('site-components/script/JSON/content.JSON').then(res => res.json().then(obj => {
-      console.log(obj);
+      console.log(obj, obj["Ayo"]);
+      // this.destructure(obj[criteria][article])
     }))
   }
   destructure({
     article
   }) {
     let p = popup;
-    fetch(article).then(res => res.text().then(txt => p.element('.info').innerHTML = txt))
+    fetch(article).then(res => res.text().then(txt => p.element('.article>p').innerHTML = txt))
     console.log('Done!');
   }
 }
