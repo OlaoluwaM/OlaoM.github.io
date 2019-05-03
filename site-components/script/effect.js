@@ -259,7 +259,7 @@ class Effect {
   destructure(article) {
     let p = parallax;
     console.log(article);
-    fetch(article).then(res => res.text().then(txt => p.element('.article>p').innerHTML = txt))
+    fetch(article).then(res => res.text().then(txt => p.element('.scrollable').innerHTML = txt))
     console.log('Done!');
   }
 }
