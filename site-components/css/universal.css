@@ -179,7 +179,3 @@ p {
   height: 50%;
   position: relative;
 }
-
-::-webkit-scrollbar {
-  display: none;
-}

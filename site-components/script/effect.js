@@ -45,9 +45,7 @@ class Effect {
       this.menuJS()
     })
     setTimeout(() => {
-      if (this.element('main>div').getAttribute('data-page', 'home')) {
-        this.slideshow(4000)
-      }
+      this.slideshow(3000)
     }, 700);
   }
   element(elem) {
@@ -186,10 +184,10 @@ class Effect {
     let random = (num) => {
       return Math.floor(Math.random() * num)
     };
-    let imgArray = []
-    setInterval(() => {
+    let imgArray = [];
+    let cycle = setInterval(() => {
       let pictureHolder = this.element('picture');
-      if (!(pictureHolder.parentElement.classList.contains('hidden'))) {
+      if (pictureHolder !== null) {
         pictureHolder.childNodes.forEach((img, _ind, arr) => {
           if (img.nodeType === 1) {
             imgArray = [...arr]
@@ -210,6 +208,8 @@ class Effect {
           }
         })
       } else {
+        console.log('break');
+        clearInterval(cycle)
         return
       }
     }, interval);
@@ -259,7 +259,17 @@ class Effect {
   destructure(article) {
     let p = parallax;
     console.log(article);
-    fetch(article).then(res => res.text().then(txt => p.element('.scrollable').innerHTML = txt))
+    fetch(article).then(res => res.text().then(txt => {
+      let text = article.slice(76, 79);
+      this.elementList('.article').childNodes.forEach(p => {
+        if (p.nodeType === 1 && p.tagName === "H2") {
+          if (text === p.innerText.slice(0, 3)) {
+            p.nextElementSibling.innerText = txt;
+            console.log('pass');
+          }
+        }
+      })
+    }))
     console.log('Done!');
   }
 }
