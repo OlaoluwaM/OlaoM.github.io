@@ -216,7 +216,7 @@ class Effect {
   }
   reveal() {
     event.target.parentElement.parentElement.classList.add('foreground')
-    this.fetchArticle(event.target.parentElement.parentElement.nextElementSibling.firstElementChild.nextElementSibling.innerText.slice(0, 3))
+    this.fetchArticle(event.target.getAttribute('data-criteria'))
     this.elementList('.member-holder').forEach(elem => {
       if (elem.nodeType === 1 && !(elem.classList.contains('foreground'))) {
         elem.classList.add('behind');

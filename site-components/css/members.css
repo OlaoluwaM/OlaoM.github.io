@@ -9,6 +9,13 @@
   display: flex;
 }
 
+.scrollable {
+  width: 100%;
+  height: 50%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 #view-members>.content-holder {
   color: #fff;
 }
