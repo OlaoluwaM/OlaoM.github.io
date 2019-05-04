@@ -5,7 +5,7 @@
 .meet-members {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 105vh;
   display: flex;
 }
 
@@ -13,9 +13,20 @@
   width: 100%;
   height: 50%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: visible;
   padding-right: 20px;
   margin-bottom: 20px;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 20px;
 }
 
 #view-members>.content-holder {
@@ -58,7 +69,7 @@
   display: block;
   object-fit: cover;
   object-position: 100% 100%;
-  filter: brightness(.3) blur(5px);
+  filter: brightness(.3) blur(4px);
   transition: .5s ease;
 }
 
@@ -153,8 +164,8 @@
   width: 100%;
   height: 100%;
   padding-left: 40px;
-  margin-top: 100px;
   position: relative;
+  padding-top: 60px;
 }
 
 #view-members>.content-holder>.content2 {
