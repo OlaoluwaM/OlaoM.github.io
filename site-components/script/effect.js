@@ -252,21 +252,18 @@ class Effect {
   }
   fetchArticle(criteria) {
     fetch('site-components/script/JSON/content.JSON').then(res => res.json().then(obj => {
-      console.log(obj, obj[criteria].article);
       this.destructure(obj[criteria].article)
     }))
   }
   destructure(article) {
-    let p = parallax;
-    console.log(article);
     fetch(article).then(res => res.text().then(txt => {
       let text = article.slice(76, 79);
-      this.elementList('.article').childNodes.forEach(p => {
-        if (p.nodeType === 1 && p.tagName === "H2") {
-          if (text === p.innerText.slice(0, 3)) {
-            p.nextElementSibling.innerText = txt;
-            console.log('pass');
-          }
+      this.elementList('.scrollable').forEach(p => {
+        console.log(text, p);
+        if (p.getAttribute('data-origin') === text) {
+          console.log(p);
+          p.innerHTML = txt;
+          console.log('pass');
         }
       })
     }))
