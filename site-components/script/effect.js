@@ -69,7 +69,6 @@ class Effect {
       // Return false if it's not in the viewport
       if (rect.right < 0 || rect.bottom < 0 ||
         rect.left > vWidth || rect.top > vHeight) {
-        console.log(false);
 
         return false;
       } else if (
@@ -78,11 +77,10 @@ class Effect {
         el.contains(efp(rect.right, rect.bottom)) ||
         el.contains(efp(rect.left, rect.bottom))
       ) {
-        console.log(true);
         return true;
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
   open() {
@@ -126,7 +124,6 @@ class Effect {
             }
           }
         })
-        console.log(this.opened());
         let color = getComputedStyle(this.opened()).backgroundColor;
         this.element('header').firstElementChild.style = 'position: relative; transform: translateY(0px) scaleX(1)'
         this.element('header').style = `background-color: ${color}`
@@ -196,7 +193,6 @@ class Effect {
             let newImg = newImgArray[numb]
             if (img.matches('.active')) {
               if (newImg !== img) {
-                console.log('pass');
                 newImg.classList.remove('dormant');
                 newImg.classList.add('active');
                 img.classList.remove('active');
@@ -208,7 +204,6 @@ class Effect {
           }
         })
       } else {
-        console.log('break');
         clearInterval(cycle)
         return
       }
@@ -259,15 +254,11 @@ class Effect {
     fetch(article).then(res => res.text().then(txt => {
       let text = article.slice(76, 79);
       this.elementList('.scrollable').forEach(p => {
-        console.log(text, p);
         if (p.getAttribute('data-origin') === text) {
-          console.log(p);
           p.innerHTML = txt;
-          console.log('pass');
         }
       })
     }))
-    console.log('Done!');
   }
 }
 let parallax = new Effect();

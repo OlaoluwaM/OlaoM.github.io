@@ -36,6 +36,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-right: 8px;
 }
 
 #view-home>.content-holder>.content>.text>p {
