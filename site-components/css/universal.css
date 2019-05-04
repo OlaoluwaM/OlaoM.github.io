@@ -152,7 +152,7 @@ p {
   letter-spacing: .3rem;
   text-transform: uppercase;
   transform: rotate(90deg);
-  color: rgba(0, 0, 0, .3);
+  color: rgba(0, 0, 0, .7);
   position: absolute;
   display: block;
   z-index: -2;

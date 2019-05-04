@@ -36,6 +36,11 @@ class Effect {
 
     this.element('.nav-container').addEventListener('click', event => {
       if (event.target.matches('.tab')) {
+        if (event.target.getAttribute('data-page') === 'home') {
+          setTimeout(() => {
+            this.slideshow(3000)
+          }, 500);
+        }
         this.changeSection();
       } else if (event.target.matches('span')) {
         this.changeSection();
@@ -149,7 +154,7 @@ class Effect {
     let content = this.element('main>div');
     if (this.element('main').childElementCount > 0) {
       if (open.getAttribute('data-page') === content.getAttribute('data-page')) {
-        content.style = "opacity: 0; transition: .2s ease;"
+        content.style = "opacity: 0; transition: .1s ease;"
       }
     } else {
       return;
